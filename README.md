@@ -4,7 +4,7 @@
 
 Rails API Project:-
 
-#API
+```
 .
 ├── app
 │   ├── channels
@@ -143,7 +143,7 @@ Rails API Project:-
 │   └── storage
 ├── vcr_cassettes
 └── vendor
-
+```
 
 ## DB Schema (PostgreSql)
 ### Tables
