@@ -1,0 +1,3 @@
+fetch_pricing_job:
+  cron: "00 00 * * *"   #it will retrieve data every dat at midnight
+  class: "FetchPricingWorker"
