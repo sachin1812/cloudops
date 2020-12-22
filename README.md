@@ -160,10 +160,14 @@ Rails API Project:-
 
 All the API's are based on versioning.
 
+# Api To Store Api Data :-
+```
+GET  "/api/v1/get_data"        #store api data to DB
+```
 # Api To Create/Add Services:-
 
 ```url  
-  "/api/v1/create_service"      #add services
+POST  "/api/v1/create_service"      #add services
   params:
     sku: string
     offerTermCode: string
@@ -180,7 +184,7 @@ All the API's are based on versioning.
 # Api To Create/Add Service Terms
 
 ```url
-  "/api/v1/create_service_term"
+POST  "/api/v1/create_service_term"
   params-
     sku: string
     offerTermCode: string
@@ -193,15 +197,15 @@ All the API's are based on versioning.
     pricePerUnit: string
     currency_code: string
 ```
-# GET API to view pricing for a specific region:-
-   Just type the location
+#  Api to view pricing for a specific region:-
+
 ```url
-   get '/service/:servicecode/region/:location'
+   GET '/service/:servicecode/region/:location'
    EX:- "/api/v1/service/AmazonCloudFront/region/japan"
 ```
 # With Date:-
 ```url
-   get '/service/:servicecode/region/:location'?date=<DATE>
+   Get '/service/:servicecode/region/:location'?date=<DATE>
    EX:- "/api/v1/service/AmazonCloudFront/region/japan?date=2020-10-01T00:00:00Z"
 ```
 #Sidekiq Worker
@@ -209,7 +213,8 @@ All the API's are based on versioning.
   workers
 │        └── fetch_pricing_worker.rb
   (Cron Set To Run Everyday At Midnight)
-
+```
+```
   FetchPricingWorker.perform_async
 ```
 # Rspec Test Case For 3rd Patyt Api and Worker
